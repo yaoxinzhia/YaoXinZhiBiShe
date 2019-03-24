@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            text-align: center;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<p>
+    您已注册成功，将于<span id="time">5</span>秒之后，自动跳转至登录界面
+</p>
+
+
+<script>
+    //五秒后页面自动跳转
+    var second = 5;
+
+    function showtime() {
+        var time = document.getElementById("time");
+        if(time <= 0) {
+            //跳转至登录界面
+            window.Location.href = "login.jsp";
+        }
+        second = second - 1;
+        time.innerHTML = second;
+    }
+
+    //设置指定周期内来调用函数表达式循环
+    setInterval(showtime, 1000)
+</script>
+</body>
+</html>
